@@ -18,10 +18,14 @@ public class IdPair extends BaseEntity {
     @Column(name = "fhir_id")
     private String fhirId;
 
+    @Column(name = "omop_id")
+    private Long omopId;
+
     public IdPair() {}
 
-    public IdPair(String fhirId) {
+    public IdPair(String fhirId, Long omopId) {
         this.fhirId = fhirId;
+        this.omopId = omopId;
     }
 
     public void setId(Long id) {
@@ -37,7 +41,11 @@ public class IdPair extends BaseEntity {
     }
 
     public Long getOmopId() {
-        return id;
+        return omopId;
+    }
+
+    public void setOmopId(Long omopId) {
+        this.omopId = omopId;
     }
 
     @Override

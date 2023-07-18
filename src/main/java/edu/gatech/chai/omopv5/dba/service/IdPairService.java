@@ -26,6 +26,10 @@ public class IdPairService extends BaseEntityServiceImp<IdPair> {
             if (rs.getString("fhir_id") != null) {
                 entity.setFhirId(rs.getString("fhir_id"));
             }
+
+            if (rs.getLong("omop_id") != 0L) {
+                entity.setOmopId(rs.getLong("omop_id"));
+            }
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
